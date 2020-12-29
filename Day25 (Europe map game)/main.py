@@ -70,18 +70,5 @@ while True:
     winner.remove_turtles()
     screen.update()
 
-# TODO CREATE TIME THAT WORKS WHILE PLAYER IS MAKING INPUT
-# TODO ADD MORE COUNTRIES TO DATAFRAME
-# thread1 = threading.Thread(target=check_answers)
-# thread1.start()
-# thread2 = threading.Thread(target=scoreboard.countdown)
-# thread2.start()
-
 screen.exitonclick()
 
-# get coordinate from image
-# def get_mouse_click_coor(x,y):
-#    print(x,y)
-
-# t.onscreenclick(get_mouse_click_coor)
-# t.mainloop()
