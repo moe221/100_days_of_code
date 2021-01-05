@@ -43,19 +43,26 @@ def check_answers():
         country_turtle = country.country_names[random_country]
         country_turtle.getscreen()
         country_turtle.showturtle()
-        answer_country = screen.textinput(title=f'{num_correct_answers}/{num_of_countries} Guess a country',
-                                          prompt="What's this country?").title()
+        while True:
 
-        if answer_country == random_country:
-            country_turtle.hideturtle()
-            num_correct_answers += 1
-            country.show_country(answer_country)
-        elif answer_country == 'Give Up':
-            show_all_countries()
-            break
+            try:
+                answer_country = screen.textinput(title=f'{num_correct_answers}/{num_of_countries} Guess a country',
+                                                  prompt="What's this country?").title()
+            except AttributeError:
+                continue
+            else:
+                if answer_country == random_country:
+                    country_turtle.hideturtle()
+                    num_correct_answers += 1
+                    country.show_country(answer_country)
+                    break
+                elif answer_country == 'Give Up':
+                    show_all_countries()
+                    break
 
-        else:
-            country_turtle.hideturtle()
+                else:
+                    country_turtle.hideturtle()
+                    break
 
 
 check_answers()
@@ -71,4 +78,3 @@ while True:
     screen.update()
 
 screen.exitonclick()
-
